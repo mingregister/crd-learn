@@ -5,7 +5,7 @@ import (
     "k8s.io/apimachinery/pkg/runtime"
     "k8s.io/apimachinery/pkg/runtime/schema"
 
-    "k8s_customize_controller/pkg/apis/bolingcavalry"
+    "github.com/mingregister/crd-learn/pkg/apis/bolingcavalry"
 )
 
 var SchemeGroupVersion = schema.GroupVersion{
