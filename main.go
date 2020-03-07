@@ -4,6 +4,9 @@ import (
     "flag"
     "time"
 
+    "net/http"
+    _ "net/http/pprof"
+
 
     "github.com/golang/glog"
     "k8s.io/client-go/kubernetes"
@@ -43,6 +46,12 @@ func main() {
     if err != nil {
         glog.Fatalf("Error building example clientset: %s", err.Error())
     }
+
+
+    // 调试学习
+    go func() {
+            http.ListenAndServe(":6060", nil)
+    }()
 
     studentInformerFactory := informers.NewSharedInformerFactory(studentClient, time.Second*30)
 
